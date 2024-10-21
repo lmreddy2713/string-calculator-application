@@ -12,6 +12,13 @@ const StringCalculator = () => {
     const regex = new RegExp(delimiters.join('|'), 'g');
 
     const parts = str.split(regex);
+
+    // Check for negative numbers
+    const negativeNumbers = parts.filter(num => Number(num) < 0);
+    if (negativeNumbers.length > 0) {
+      throw new Error(`Negative numbers not allowed: ${negativeNumbers.join(', ')}`);
+    }
+
     const numbers = parts
       .filter(part => part.trim() !== '') // Remove empty strings
       .map(Number) // Convert strings to numbers
@@ -22,7 +29,11 @@ const StringCalculator = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setResult(addNumbersInString(input));
+    try {
+      setResult(addNumbersInString(input));
+    } catch (error) {
+      alert(error.message);
+    }
   };
 
   return (
