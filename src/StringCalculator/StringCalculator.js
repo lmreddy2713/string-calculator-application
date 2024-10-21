@@ -6,6 +6,8 @@ const StringCalculator = () => {
   const [result, setResult] = useState(0);
 
   const addNumbersInString = (str) => {
+    if (!str.trim()) return 0; // Return 0 if the input string is empty or whitespace
+
     const delimiters = [',', ';', ' ', '\t', '\n', '|', ':'];
     const regex = new RegExp(delimiters.join('|'), 'g');
 
