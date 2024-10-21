@@ -5,6 +5,10 @@ const StringCalculator = () => {
   const [input, setInput] = useState('');
   const [result, setResult] = useState(0);
 
+  const addNumbersInString = (str) => {
+    // Placeholder function
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     // Logic for calculation will go here
