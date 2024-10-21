@@ -1,0 +1,69 @@
+calculator box in the middle of the screen */
+.string-calculator {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f4f4f4;
+  font-family: Arial, sans-serif;
+}
+
+/* Style the input box */
+.string-calculator input[type="text"] {
+  width: 355px;
+  padding: 10px;
+  margin: 10px 0;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Style the submit button */
+.string-calculator button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.string-calculator button:hover {
+  background-color: #45a049;
+}
+
+/* Style the result display */
+.string-calculator h2 {
+  margin-top: 20px;
+  color: #333;
+  font-size: 24px;
+}
+
+/* Style the heading */
+.string-calculator h1 {
+  font-size: 32px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Form container styling */
+.string-calculator form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive design */
+@media screen and (max-width: 600px) {
+  .string-calculator input[type="text"] {
+    width: 90%;
+  }
+}
