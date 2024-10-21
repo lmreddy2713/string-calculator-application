@@ -6,12 +6,21 @@ const StringCalculator = () => {
   const [result, setResult] = useState(0);
 
   const addNumbersInString = (str) => {
-    // Placeholder function
+    const delimiters = [',', ';', ' ', '\t', '\n', '|', ':'];
+    const regex = new RegExp(delimiters.join('|'), 'g');
+
+    const parts = str.split(regex);
+    const numbers = parts
+      .filter(part => part.trim() !== '') // Remove empty strings
+      .map(Number) // Convert strings to numbers
+      .filter(num => !isNaN(num)); // Filter out invalid numbers
+
+    return numbers.reduce((acc, num) => acc + num, 0);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Logic for calculation will go here
+    setResult(addNumbersInString(input));
   };
 
   return (
